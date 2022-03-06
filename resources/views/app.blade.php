@@ -11,8 +11,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo mix('css/app.css'); ?>">
     <!-- <link rel="stylesheet" type="text/css" href="<?php echo asset('css/app.css') . '?' . strtotime('now'); ?>"> -->
     
-    <!-- tailwindcss 使用 CDN，先開發之後再安裝 -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script> <!-- tailwindcss 使用 CDN，先開發之後再安裝 -->
 </head>
 <body>
     <div id="app">

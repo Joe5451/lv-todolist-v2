@@ -24,7 +24,6 @@ Vue.component('main-head', Head);
 
 window.$ = jquery;
 window.Vue = Vue;
-// window.Swiper = Swiper;
 Vue.use(VueRouter);
 
 const router = new VueRouter({
