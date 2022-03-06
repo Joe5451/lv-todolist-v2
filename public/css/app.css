@@ -1,0 +1,550 @@
+@import url(https://fonts.googleapis.com/css?family=Nunito);
+@charset "UTF-8";
+* {
+  font-family: "Microsoft JhengHei", sans-serif;
+}
+
+body {
+  background: #161E30;
+  padding-top: 50px;
+}
+
+/* 導覽列 */
+.main_header {
+  background: #283046;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+
+.main_nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.main_nav_link {
+  font-size: 1.125rem;
+  margin: 0 15px;
+  color: #625AC8;
+  font-weight: 700;
+  transition: all 0.4s ease-in-out;
+}
+
+.main_nav_link:hover,
+.main_nav_link.active {
+  color: #aba5e9;
+}
+
+@media (max-width: 575px) {
+  .main_header {
+    display: none !important;
+  }
+}
+/* 手機版選單 */
+.mobile_header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 100;
+  background: #31375A;
+  -webkit-clip-path: circle(40px at 90% -10%);
+          clip-path: circle(40px at 90% -10%);
+  transition: all 1s ease-out;
+  pointer-events: none;
+}
+
+.mobile_header.show {
+  -webkit-clip-path: circle(1000px at 90% -10%);
+          clip-path: circle(1000px at 90% -10%);
+  pointer-events: all;
+}
+
+@media (min-width: 575px) {
+  .mobile_header {
+    display: none !important;
+  }
+}
+.mobile_nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.mobile_nav_link {
+  color: #625AC8;
+  font-weight: 700;
+  transition: all 0.4s ease-in-out;
+  font-size: 24px;
+  margin-bottom: 40px;
+  width: 135px;
+}
+
+.mobile_nav_link:hover,
+.mobile_nav_link.active {
+  color: #aba5e9;
+}
+
+.mobile_nav_link i {
+  width: 30px;
+}
+
+/* 選單按鈕 */
+.menu_btn {
+  cursor: pointer;
+  background: #31375A;
+  position: fixed;
+  z-index: 200;
+  top: 15px;
+  right: 15px;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 575px) {
+  .menu_btn {
+    display: none !important;
+  }
+}
+.menu_btn.active {
+  box-shadow: none;
+}
+
+.menu_btn_bar {
+  width: 30px;
+  height: 4px;
+  background-color: #aba5e9;
+  margin: 3px 0;
+  transition: 0.4s ease-in-out;
+  border-radius: 3px;
+}
+
+.menu_btn.active .menu_btn_bar1 {
+  transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.menu_btn.active .menu_btn_bar2 {
+  opacity: 0;
+}
+
+.menu_btn.active .menu_btn_bar3 {
+  transform: rotate(45deg) translate(-8px, -9px);
+}
+
+/* 通用 */
+.primary_btn {
+  background: #31375A;
+  color: #7367f0;
+  padding: 5px 15px;
+  border-radius: 8px;
+  font-size: 18px;
+  transition: all 0.4s ease-in-out;
+}
+
+.primary_btn i {
+  margin-left: 5px;
+}
+
+.primary_btn:hover {
+  background: #7367f0;
+  color: #31375A;
+}
+
+/* 首頁 */
+.index_container {
+  background: #283046;
+  padding: 20px;
+}
+
+.todo_head {
+  display: flex;
+  align-items: center;
+}
+
+.todo_head_title {
+  padding: 0 15px;
+  color: #d0d2d6;
+  font-size: 1.25rem;
+}
+
+.todo_header_btn_container {
+  display: flex;
+  align-items: center;
+}
+
+.todo_head_btn {
+  background: #22263f;
+  color: #7367f0;
+  border-radius: 8px 8px 0 0;
+  padding: 5px 15px;
+  margin-right: 5px;
+  transition: all 0.4s ease-in-out;
+}
+
+.todo_head_btn:hover,
+.todo_head_btn.active {
+  background: #31375A;
+}
+
+.todo_body {
+  background: #31375A;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.todolist_container {
+  max-height: 436px;
+  overflow-y: auto;
+}
+
+.todolist_container::-webkit-scrollbar {
+  width: 5px;
+}
+
+.todolist_container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.todolist_container::-webkit-scrollbar-thumb {
+  background: #161E30;
+  border-radius: 5px;
+}
+
+.todolist_container::-webkit-scrollbar-thumb:hover {
+  background: #1b253b;
+}
+
+.todolist_item {
+  position: relative;
+  background: #282d4b;
+  border-radius: 8px;
+  padding: 15px 110px 15px 15px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 575px) {
+  .todolist_item {
+    padding: 15px;
+  }
+}
+.todolist_item:last-child {
+  margin-bottom: 0;
+}
+
+.todolist_item.trash {
+  background: #fff;
+  opacity: 0.9;
+}
+
+.todolist_item_category_tag {
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: #212121;
+  font-size: 0.75rem;
+  background-color: #ff9f43;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.todolist_item_category_tag.trash {
+  opacity: 0.8;
+}
+
+.todolist_item_title {
+  color: #7367f0;
+  font-size: 1.25rem;
+}
+
+.todolist_item_title.trash {
+  color: #C1C0BB;
+}
+
+.todolist_item_content {
+  margin-top: 5px;
+  color: #7367f0;
+  background: #1b1e31;
+  border-radius: 8px;
+  padding: 5px 10px;
+  display: inline-block;
+}
+
+.todolist_item_content.trash {
+  background-color: #e5e7eb;
+  color: #C1C0BB;
+}
+
+.todolist_item_btn_group {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+}
+
+@media (max-width: 575px) {
+  .todolist_item_btn_group {
+    position: static;
+    transform: translateY(0);
+    text-align: right;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.todolist_item_btn {
+  font-size: 2rem;
+  margin: 0 10px;
+  /* color: #1b1e31; */
+  transition: all 0.4s ease-in-out;
+}
+
+.todolist_item_btn.finish {
+  color: #28c76f;
+}
+
+.todolist_item_btn.finish:hover {
+  color: #27a05d;
+}
+
+.todolist_item_btn.delete {
+  color: #ea5455;
+}
+
+.todolist_item_btn.delete:hover {
+  color: #db3e3e;
+}
+
+.todolist_item_btn.redo {
+  color: #ff9f43;
+  color: #161827;
+}
+
+.todolist_item_btn.redo:hover {
+  color: #db7c22;
+  color: #1e2238;
+}
+
+.todo_data_container {
+  display: flex;
+}
+
+.todo_data_content {
+  margin-right: 30px;
+}
+
+.todo_data_item {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.todo_data_item_title {
+  color: #d0d2d6;
+}
+
+.todo_data_item_text {
+  color: #d0d2d6;
+}
+
+.progress_container {
+  padding: 20px;
+}
+
+/* 彈跳視窗 */
+.todo_popup {
+  background: #31375A;
+  border-radius: 8px;
+  display: none;
+  padding: 20px 30px;
+  width: 80vw;
+  max-width: 480px;
+  position: relative;
+}
+
+.todo_popup_title {
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 15px;
+  color: #d0d2d6;
+  font-size: 24px;
+}
+
+.todo_form_group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 575px) {
+  .todo_form_group {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.todo_form_label {
+  width: 80px;
+  margin-right: 15px;
+  color: #d0d2d6;
+  font-size: 20px;
+  text-align: right;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 575px) {
+  .todo_form_label {
+    margin-bottom: 10px;
+  }
+}
+.todo_form_control {
+  background: transparent;
+  border: 1px solid #d0d2d6;
+  border-radius: 5px;
+  padding: 5px 15px;
+  outline: none;
+  color: #d0d2d6;
+  width: 100%;
+}
+
+.todo_popup_btn_group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.todo_popup_btn {
+  background: rgba(0, 207, 232, 0.2);
+  color: #00cfe8;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 20px;
+  transition: all 0.4s ease-in-out;
+}
+
+.todo_popup_btn:hover {
+  background: rgba(0, 207, 232, 0.5);
+}
+
+.popup_close_btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 24px;
+  width: 36px;
+  height: 36px;
+  color: #171E30;
+  transition: all 0.4s ease-in-out;
+}
+
+.popup_close_btn:hover {
+  color: #ff9f43;
+}
+
+#add_tag_popup_content {
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 15px;
+}
+
+#add_tag_popup_content::-webkit-scrollbar {
+  width: 5px;
+}
+
+#add_tag_popup_content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#add_tag_popup_content::-webkit-scrollbar-thumb {
+  background: #161E30;
+  border-radius: 5px;
+}
+
+#add_tag_popup_content::-webkit-scrollbar-thumb:hover {
+  background: #1b253b;
+}
+
+.tag_btn {
+  padding: 5px;
+  border-radius: 5px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background: #161E30;
+  color: #949eb9;
+  margin: 0 5px 11px;
+}
+
+/* 標籤管理 */
+/* .todo_body {
+	background: #31375A;
+	border-radius: 8px;
+	padding: 15px;
+} */
+.tag_list_outer_container {
+  background: #424972;
+  background: #40466d;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.tag_list_container {
+  padding: 15px;
+}
+
+.tag_list_container {
+  max-height: 436px;
+  overflow-y: auto;
+}
+
+.tag_list_container::-webkit-scrollbar {
+  width: 5px;
+}
+
+.tag_list_container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.tag_list_container::-webkit-scrollbar-thumb {
+  background: #161E30;
+  border-radius: 5px;
+}
+
+.tag_list_container::-webkit-scrollbar-thumb:hover {
+  background: #1b253b;
+}
+
+.tag_list {
+  padding: 15px;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: #282d4b;
+}
+
+.tag_list:last-child {
+  margin-bottom: 0;
+}
+
+.tag_list_title {
+  font-size: 1.125rem;
+  background: #ff9f43;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
