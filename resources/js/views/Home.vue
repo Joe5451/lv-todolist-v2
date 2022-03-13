@@ -69,8 +69,34 @@
             </div>
         </div>
         
-        <div class="task_add_btn">新增<br>任務</div>
+        <div class="task_add_btn" onclick="$('#task_add_popup_block').fadeIn();">新增<br>任務</div>
         <div class="totop_btn">TOP</div>
+
+        <div class="popup_block" id="task_add_popup_block">
+            <div class="popup_container">
+                <div class="popup_background" onclick="$('#task_add_popup_block').fadeOut();"></div>
+                <div class="popup_window">
+                    <button class="popup_close_btn" onclick="$('#task_add_popup_block').fadeOut();">&times;</button>
+                    <div class="popup_title">新增任務</div>
+                    <div class="popup_form_group">
+                        <label class="popup_form_label">分類</label>
+                        <select name="task_category" class="popup_form_select">
+                            <option value="">無</option>
+                            <option value="Option1">Option1</option>
+                        </select>
+                    </div>
+
+                    <div class="popup_form_group">
+                        <label class="popup_form_label">內容</label>
+                        <input type="text" name="task_content" placeholder="請輸入內容" class="popup_form_input">
+                    </div>
+
+                    <div class="popup_form_btn_wrap">
+                        <button class="popup_from_btn bg-blue-500 hover:bg-blue-600 shadow-lg shadow-blue-500/50">新增</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 ​
