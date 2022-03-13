@@ -13,7 +13,7 @@ import jquery from 'jquery';
 
 // views
 import Home from './views/Home';
-import TagList from './views/TagList';
+import Category from './views/Category';
 // import Trash from './views/Trash';
 
 // components
@@ -35,9 +35,9 @@ const router = new VueRouter({
             component: Home,
         },
         {
-            path: '/lv-todolist-v2/public/tag_list',
-            name: 'tag_list',
-            component: TagList,
+            path: '/lv-todolist-v2/public/category',
+            name: 'category',
+            component: Category,
         },
        
     ],

@@ -316,6 +316,11 @@ body {
 	line-height: 1.5;
 }
 
+.popup_form_colorpicker {
+	width: 40px;
+	height: 40px;
+}
+
 .popup_form_btn_wrap {
 	display: flex;
 	align-items: center;
@@ -326,6 +331,19 @@ body {
 	padding: 5px 10px;
 	border-radius: 5px;
 	color: #fff;
-	// background: rgb(14, 165, 233);
-	// box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+}
+
+.task_category_color {
+	width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: 2px solid #f00;
+    margin-right: 15px;
+    position: relative;
+    flex-shrink: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 0 8px 0 #f00;
+	background: #f00;
 }
